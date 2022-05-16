@@ -46,16 +46,23 @@ class Grid {
 
     #buildGridCells() {
         const { numRows, numCols } = this
+        const myArray = ['4-4','4-5','4-6','4-7','6-6']
         this.gridcells = {}
-
         for ( let row = 0; row < numRows; row++ ) {
             for ( let col = 0; col < numCols; col++ ) {
-
                 const gridcell = new GridCell({ grid: this, row, col })
-                gridcell.render()
-
-                this.gridcells[ gridcell.position ] = gridcell
-            }
+                    this.gridcells[ gridcell.position ] = gridcell
+                    gridcell.render()
+            } 
+        } 
+        for(let i=0;i<myArray.length;i++){
+            const Array = myArray[i].split("-")
+            // console.log(Array)
+            let rowOut = Array[0]
+            let colOut = Array[1]
+            const gridcell = new GridCell({ grid: this, rowOut, colOut })
+            this.gridcells[ gridcell.position ] = gridcell
+            gridcell.render(rowOut,colOut)
         }
     }
     #buildGridSvg() {

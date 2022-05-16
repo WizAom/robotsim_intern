@@ -8,14 +8,22 @@ class GridCell {
     get position() { 
         return `${ this.row }-${ this.col }`
     }
-    render() {
+    render(row,col) {
         this.#renderHtmlElement()
         this.#renderHtmlStyling()
         this.#renderAttributes()
+        this.renderBlocked(row,col)
         this.renderGridcellDynamics()
 
         renderEvents.call( this )
     }
+
+    // #reformPos(pos){
+    //     const myArray = pos.split("-")
+    //     let rowOut = myArray[0]
+    //     let colOut = myArray[1]
+    //     return [rowOut,colOut]
+    // }
 
     #renderHtmlElement() {
         const { grid: { gridElement } } = this
@@ -37,21 +45,24 @@ class GridCell {
             border: `${ borderSize }px solid ${ borderColor }`
         })
 
-        gridcellElement.setAttribute( 'draggable', true )
+        // gridcellElement.setAttribute( 'draggable', true )
     }
-    #renderAttributes() {
-        const { grid: { numCols, numRows } } = this
-
+    #renderAttributes(pos) {
+        // const { grid: { numCols, numRows } } = this
+        
         this.isBlocked = false
         this.isOutCell = this.position === '0-0'
-        this.isBlocked = this.position === '15-15'
-        this.isInCell = this.position === '18-18'
+        this.isInCell = this.position === '10-10'
+        
         //`${ numRows -1 }-${ numCols -1}`
         
     }
+    renderBlocked(row,col){
+        console.log(row,col)
+        this.isBlocked = this.position === `${row}-${col}`
+    }
     renderGridcellDynamics() {
         this.gridcellElement.classList[ this.isBlocked ? 'add' : 'remove' ]( 'blocked' )
-
         this.gridcellElement.classList[ this.isOutCell ? 'add' : 'remove' ]( 'out-cell' )
         this.gridcellElement.classList[ this.isInCell ? 'add' : 'remove' ]( 'in-cell' )
     }
