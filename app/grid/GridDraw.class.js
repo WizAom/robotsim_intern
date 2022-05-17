@@ -33,7 +33,7 @@ class GridDraw {
         }
 
         const m1 = generateM( parseInt( colOut ) + 1 )
-        const m2 = generateM( parseInt( rowOut ) + 1 )
+        const m2 = generateM( parseInt( rowOut ) + 5.5 )
 
         let pathD = `M${ m1 } ${ m2 }`
         const distance = cellSize + borderSize * 2
