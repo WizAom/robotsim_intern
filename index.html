@@ -1,15 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Path Finding Algorithm</title>
     <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
+    <link rel="stylesheet" href="css/magnific-popup.css"> 
+    <link rel="stylesheet" href="css/templatemo-ocean-vibes.css"> 
+    <script src="https://kit.fontawesome.com/f4645ba908.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <svg id="gridSvg">
-        <path d=""></path>
-    </svg>
+    <header class="tm-site-header">
+        <h1 class="tm-mt-0 tm-mb-15"><span class="tm-color-primary">SRTET</span> <span class="tm-color-gray-2">Bang Sue Grand Map</span></h1>
+        <br />
+        <br />
+        <br />
+        <center><em class="tm-tagline tm-color-light-gray">โปรดเลือกสถานนี่ที่คุณกำลังจะไป...</em></center>
+        <center><em class="tm-tagline tm-color-light-gray">please Choose where you want to go...</em></center>
+    </header>
+
+ <!-- <section class="content">
+    <h2>please Choose where you want to go... </h2>
+    <div class="box bg-1">
+        <button class="button button--antiman button--round-l button--text-medium"><i class="button__icon icon icon-plus"></i><span></span>รถไฟความเร็วสูง</button>
+        <button class="button button--antiman button--round-l button--text-medium"><i class="button__icon icon icon-map-marker"></i><span>รถไฟฟ้าชานเมือง</span></button>
+        <button class="button button--antiman button--round-l button--text-medium"><i class="button__icon icon icon-clock"></i><span>รถไฟทางไกล</span></button>
+        <button class="button button--antiman button--round-l button--text-medium"><i class="button__icon icon icon-clock"></i><span>รถไฟแอร์พอตเรลลิ้งก์</span></button>
+        <button class="button button--antiman button--round-l button--text-medium"><i class="button__icon icon icon-plus"></i><span>รถไฟฟ้าสายสีน้ำเงิน</span></button>
+        <button class="button button--antiman button--round-l button--text-medium"><i class="button__icon icon icon-map-marker"></i><span>ห้องจำหน่ายตั๋ว</span></button>
+        <button class="button button--antiman button--round-l button--text-medium"><i class="button__icon icon icon-clock"></i><span>ตู้จำหน่ายตั๋วอัตโนมัติ</span></button>
+        <button class="button button--antiman button--round-l button--text-medium"><i class="button__icon icon icon-clock"></i><span>ห้องละหมาด</span></button>
+        <button class="button button--antiman button--round-l button--text-medium"><i class="button__icon icon icon-plus"></i><span>ร้านค้า</span></button>
+        <button class="button button--antiman button--round-l button--text-medium"><i class="button__icon icon icon-map-marker"></i><span>จุดประสัมพันธ์</span></button>
+        <button class="button button--antiman button--round-l button--text-medium"><i class="button__icon icon icon-clock"></i><span>ทางเข้า-ออก</span></button>
+        <button class="button button--antiman button--round-l button--text-medium"><i class="button__icon icon icon-clock"></i><span>จุดเรียกเท็กซี่</span></button>
+        <button class="button button--antiman button--round-l button--text-medium"><i class="button__icon icon icon-plus"></i><span>จุดรอรับผู้โดยสาร สำหรับรถยนต์ทั่วไป</span></button>
+        <button class="button button--antiman button--round-l button--text-medium"><i class="button__icon icon icon-map-marker"></i><span>จุดรอรับผู้โดยสาร สำหรับรถประจำทางและ Shuttle Buses</span></button>
+        <button class="button button--antiman button--round-l button--text-medium"><i class="button__icon icon icon-clock"></i><span>เต้ารับคู่ 15A. 250V.</span></button>
+        <button class="button button--antiman button--round-l button--text-medium"><i class="button__icon icon icon-clock"></i><span>GO</span></button>
+    </div>
+</section> -->
+
+   <!-- <svg id="gridSvg">
+    <path d=""></path>
+    </svg> 
     <div id="grid"></div>
-    <div class="gridcell" position="9-21" draggable="true" style="width: 30px; height: 30px; border: 1px solid gray;"></div>
-    <script src="scripts.js" type="module"></script>
+    <div class="gridcell" position="9-21" draggable="true" style="width: 30px; height: 30px; border: 1px solid gray;"></div>  
+    <script src="scripts.js" type="module"></script>  -->
+
+    <div class="tm-container">
+        <nav class="tm-main-nav">
+            <ul id="inline-popups">
+                <li class="tm-nav-item">
+                    <a href="#intro" data-effect="mfp-move-from-top" class="tm-nav-link">
+                        รถไฟความเร็วสูง  
+                        <i class="fas fa-2x fa-train"></i>     
+                    </a>                
+                </li>
+                <li class="tm-nav-item">
+                    <a href="#gallery" data-effect="mfp-move-from-top" class="tm-nav-link">
+                    รถไฟฟ้าชานเมือง                           
+                    <i class="material-icons" style="font-size:48px;color:red">tram</i>
+                    </a>    
+                </li>
+                <li class="tm-nav-item">
+                    <a href="#testimonials" data-effect="mfp-move-from-top" class="tm-nav-link">
+                        รถไฟทางไกล
+                        <i class="fas fa-2x fa-train"></i>
+                    </a>
+                </li>
+                <li class="tm-nav-item">
+                    <a href="#about" data-effect="mfp-move-from-top" class="tm-nav-link">
+                        รถไฟฟ้าแอร์พอตเรลลิ้งก์
+                        <i class="fas fa-2x fa-subway"></i>
+                    </a>
+                </li>
+                <li class="tm-nav-item">
+                    <a href="#contact" data-effect="mfp-move-from-top" class="tm-nav-link">
+                        รถไฟฟ้าสายสีน้ำเงิน
+                        <i class="fas fa-2x fa-subway"></i>
+                    </a>
+                </li> 
+                <li class="tm-nav-item">
+                    <a href="#contact" data-effect="mfp-move-from-top" class="tm-nav-link">
+                        ห้องจำหน่ายตั๋ว
+                        <i class="fa-solid fa-2x fa-ticket"></i>
+                    </a>                
+                </li>
+                <li class="tm-nav-item">
+                    <a href="#gallery" data-effect="mfp-move-from-top" class="tm-nav-link">
+                        ตู้จำหน่ายตั๋วอัตโนมัติ
+                        <i class="fa-solid fa-2x fa-calculator"></i>
+                    </a>
+                </li>
+                <li class="tm-nav-item">
+                    <a href="#testimonials" data-effect="mfp-move-from-top" class="tm-nav-link">
+                        ห้องน้ำ
+                        <i class='fas fa-2x fa-restroom'></i>
+                    </a>
+                </li>
+                <li class="tm-nav-item">
+                    <a href="#about" data-effect="mfp-move-from-top" class="tm-nav-link">
+                        ศูนย์อาหาร
+                        <i class="fas fa-2x fa-utensils"></i>
+                    </a>
+                </li>
+                <li class="tm-nav-item">
+                    <a href="#contact" data-effect="mfp-move-from-top" class="tm-nav-link">
+                        ห้องละหมาด
+                        <i class="fa-solid fa-2x fa-person-praying"></i>
+                    </a>
+                </li>
+                <li class="tm-nav-item">
+                    <a href="#intro" data-effect="mfp-move-from-top" class="tm-nav-link">
+                        ร้านค้า
+                        <i class="fas fa-2x fa-store"></i>
+                    </a>                
+                </li>
+                <li class="tm-nav-item">
+                    <a href="#testimonials" data-effect="mfp-move-from-top" class="tm-nav-link">
+                        จุดประสัมพันธ์
+                        <i class="fa-solid fa-2x fa-circle-info"></i>                   
+                     </a>
+                </li>
+                <li class="tm-nav-item">
+                    <a href="#testimonials" data-effect="mfp-move-from-top" class="tm-nav-link">
+                        ทางเข้า-ออก 
+                        <i class="material-icons" style="font-size:48px;color:red">import_export</i>
+                    </a>
+                </li>
+                <li class="tm-nav-item">
+                    <a href="#about" data-effect="mfp-move-from-top" class="tm-nav-link">
+                        จุดเรียกเท็กซี่
+                        <i class="fas fa-2x fa-taxi"></i>
+                    </a>
+                </li>
+                <li class="tm-nav-item">
+                    <a href="#contact" data-effect="mfp-move-from-top" class="tm-nav-link">
+                        จุดรอรับผู้โดยสาร สำหรับรถยนต์
+                        <i class="fas fa-2x fa-car-alt"></i>
+                    </a>
+                </li> 
+                <li class="tm-nav-item">
+                    <a href="#intro" data-effect="mfp-move-from-top" class="tm-nav-link">
+                        จุดรอรับผู้โดยสาร สำหรับรถเมล์
+                        <i class="fas fa-2x fa-bus"></i>
+                    </a>                
+                </li>
+                <li class="tm-nav-item">
+                    <a href="#intro" data-effect="mfp-move-from-top" class="tm-nav-link">
+                        เต้ารับคู่ 15A. 250V.
+                        <i class="fa-solid fa-2x fa-plug"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+            </div>
+        </div> 
+    </div>
+
+    <footer class="tm-footer">
+        <span>Copyright &copy; 2020 Your Company</span>
+        <span>Web Designed by 
+        <a href="https://templatemo.com" title="free website templates" target="_parent" rel="nofollow">TemplateMo</a></span>
+</footer>
 </body>
 </html>
