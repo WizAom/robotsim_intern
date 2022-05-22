@@ -11,4 +11,3 @@ btn.addEventListener('click', function (){
     grid.draw()
 })
 
-
