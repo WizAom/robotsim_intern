@@ -1,0 +1,10 @@
+โปรเจคโฟลเดอร์นี้จะเป็นหน้าที่สามารถใช้ Path Fiding Algorithm ได้ 
+โดย Algorithm จะคิดหาเส้นทางจากจุดเริ่มต้น(สีเขียว)ไปยังจุดปลายทาง(สีส้ม)
+โดยสามารถเพิ่ม Block ได้ โดยการคลิ๊ก จะเป็นการ generate block แบบ dynamic
+Algorithm จะทำการคิดและหาเส้นทางใหม่ หากมี block มาขึ้น โดยจะ render ตลอดเวลา
+วิธีการใช้
+1.Git Clone ใน VS Code
+2.ติดตั้ง Extensions ชื่อ Live Server 
+3.คลิ๊กขวาที่ไฟล์ index.html 
+4.คลิ๊ก Open With Live Server
+บัคที่เกิดขึ้น : ยังไม่สามารถเพิ่ม button เพื่อเชื่อมหน้าแรกกับหน้า algorithm ได้, ไม่สามารถ render block แบบ static หลายจุดพร้อมกันได้
