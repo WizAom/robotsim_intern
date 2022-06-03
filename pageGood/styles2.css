@@ -1,0 +1,46 @@
+body {
+    background-color: whitesmoke; 
+    /* background-image: url('22.jpg');  */
+    /* opacity:0.3; */
+    /* margin: 13px; */
+	font-family: 'Prompt', sans-serif;
+    /* font-size: 18px; */
+    /* line-height: 1.8em; */
+    overflow-x: hidden;
+}
+/* .img1{
+    /* top: 2vw; 
+    width: 12%;
+    right: 3vw;
+    position: absolute;
+} */
+/* .img2{
+    width: 100%;
+} */
+.tm-color-primary { color: red; }
+.tm-color-gray-2 { color: #98999A; }
+.gridcell {
+    float: left;
+    
+}
+.gridcell.blocked {
+    position: static;
+    background: gray;
+    /* padding: 20px; */
+}
+.gridcell.out-cell {
+    background-color: lightgreen;
+}
+.gridcell.in-cell {
+    background-color: coral;
+}
+
+svg {
+    position: fixed;
+    z-index: -1;
+}
+svg path {
+    fill: none;
+    stroke-width: 3px;
+    stroke: red;
+}
